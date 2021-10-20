@@ -24,11 +24,10 @@ sudo chmod +x /usr/local/bin/docker-compose
 exec $SHELL
 docker-compose version
 
-
-echo "========================== GIT CLONE APP ===="
-mkdir ~/project
-cd ~/project
-git clone https://github.com/johnrlive/quest.git
+# echo "========================== GIT CLONE APP ===="
+# mkdir ~/project
+# cd ~/project
+# git clone https://github.com/johnrlive/quest.git
 
 
 echo "========================== BUILD & RUN - docker-compose ====="
