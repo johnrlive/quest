@@ -1,0 +1,7 @@
+
+
+terraform init
+
+terraform apply
+
+ami-074cce78125f09d61
