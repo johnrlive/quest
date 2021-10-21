@@ -23,8 +23,8 @@ docker-compose version
 
 
 echo "========================== Reset - ec2-user session ===="
-sudo su -
-exit
+source ~/.bashrc
+source ~/.bash_profile
 
 
 echo "========================== BUILD & RUN - docker-compose ====="
