@@ -1,6 +1,4 @@
 #!/bin/bash
-#GO_VER=1.16
-#NODE_VER=10.0.0
 echo "========================== YUM UPDATE & DEPS ===="
 sudo yum update -y
 sudo yum install -y git
@@ -24,13 +22,11 @@ sudo chmod +x /usr/local/bin/docker-compose
 exec $SHELL
 docker-compose version
 
-# echo "========================== GIT CLONE APP ===="
-# mkdir ~/project
-# cd ~/project
-# git clone https://github.com/johnrlive/quest.git
+
+echo "========================== Reset - ec2-user session ===="
+sudo su -
+exit
 
 
 echo "========================== BUILD & RUN - docker-compose ====="
-cd ~/project/quest
 docker-compose build && docker-compose up -d
-# cd ~

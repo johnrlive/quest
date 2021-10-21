@@ -9,7 +9,7 @@ git clone git@github.com:johnrlive/quest.git && cd quest
 ## Step 2: (iac) - Run Terraform
 
 ```
-sh terraform/terraform-deploy.sh
+sh ./terraform-deploy.sh
 ```
 
 # Server Setup
@@ -17,13 +17,14 @@ sh terraform/terraform-deploy.sh
 ## Step 1: (ssh) Login into the server that was create by Terraform
 
 ```
-ssh -i ~/.ssh/devops.pem ec2-user@server-ip
+ssh -i "~/.ssh/devops-east2.pem" ec2-user@ec2-IP.us-east-2.compute.amazonaws.com
 ```
 
-## Step 2: (git) - Clone app in ec2 instance
+## Step 2: (git) - Install git & Clone app in ec2 instance
 
 ```
-git clone git@github.com:johnrlive/quest.git && cd quest
+sudo yum install git -y
+git clone https://github.com/johnrlive/quest.git && cd quest
 ```
 
 ## Step 3: (app) - Run a fresh installation of the Node App with Docker & Docker Compose
@@ -34,7 +35,7 @@ sh ./ec2-deploy.sh
 
 ### docker-compose tasks:
 
-- Build docker contianers
+- Build docker containers
 
 ```
 docker-compose build

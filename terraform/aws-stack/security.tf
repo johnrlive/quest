@@ -38,6 +38,16 @@ resource "aws_security_group_rule" "egress-all" {
   security_group_id = "${aws_security_group.alb_sg.id}"
 }
 
+resource "aws_security_group_rule" "ingress-ssh" {
+  type        = "ingress"
+  from_port   = 22
+  to_port     = 22
+  protocol    = "tcp"          # -1 is All
+  cidr_blocks = ["0.0.0.0/0"]
+
+  security_group_id = "${aws_security_group.alb_sg.id}"
+}
+
 resource "aws_security_group_rule" "ingress-http" {
   type        = "ingress"
   from_port   = 80
