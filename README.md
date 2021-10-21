@@ -8,6 +8,8 @@ git clone git@github.com:johnrlive/quest.git && cd quest
 
 ## Step 2: (iac) - Run Terraform
 
+Note to you must add variables
+
 ```
 sh ./terraform-deploy.sh
 ```
@@ -32,6 +34,20 @@ git clone https://github.com/johnrlive/quest.git && cd quest
 ```
 sh ./ec2-deploy.sh
 ```
+
+# TODO:
+
+- [ ] Use Terraform - to Create new VPC
+
+- [ ] Use Terraform - to Create 2 new subnets
+
+- [ ] Domain changes - Move dns services from Cloudflare to Route53
+
+- [ ] Use Terraform - to create cname rearc.johnrlive.com to ALB DNS record
+
+- [ ] Use Terraform - to create ACM instead of manually via console
+
+- [ ] Use Terraform - to create Route53 cnames for domain ACM validation
 
 ### docker-compose tasks:
 
