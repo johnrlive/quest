@@ -1,7 +1,8 @@
 #!/bin/bash
-echo "========================== YUM UPDATE & DEPS ===="
-sudo yum update -y
-sudo yum install -y git
+# echo "========================== YUM UPDATE & DEPS ===="
+# sudo yum update -y
+# sudo yum install -y git
+#cd ~ && git clone https://github.com/johnrlive/quest.git && cd quest
 
 
 echo "========================== INSTALL - Docker CE =============="
@@ -22,10 +23,15 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose version
 
 
-echo "========================== Reset - ec2-user session ===="
+echo "========== Run command below in bash: ==================="
+echo "docker-compose build && docker-compose up -d"
+echo "if docker-compuse does not run reset session log out & in"
+echo "========================================================="
+# ========================== Resets - ec2-user session ====
 source ~/.bashrc
 source ~/.bash_profile
+exec $SHELL
 
 
-echo "========================== BUILD & RUN - docker-compose ====="
-docker-compose build && docker-compose up -d
+#echo "========================== BUILD & RUN - docker-compose detached ====="
+#docker-compose build && docker-compose up -d
