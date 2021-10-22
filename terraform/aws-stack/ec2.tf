@@ -8,9 +8,9 @@ resource "aws_instance" "app_server" {
   subnet_id       = "${var.aws_subnet_a_id}"
   #user_data       = "${file("./userdata.txt")}"
   security_groups = ["${aws_security_group.alb_sg.id}"]
-
+  count           = 2
 
   tags = {
-    Name = var.instance_name
+    Name = "app_server-${count.index}"
   }
 }

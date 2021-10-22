@@ -29,6 +29,8 @@ variable "aws_subnet_b_id" {
 #   default     = "sg-0fb16ed2fbdb0b9fb"
 # }
 
+
+## ec2.tf vars ##
 variable "instance_name" {
   description = "Value of the Name tag for the EC2 instance"
   type        = string
